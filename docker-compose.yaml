@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  yolo.client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    networks:
+      -  yolo_network
+    volumes:
+      - ./client:/app
+
+  yolo-backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - yolo_network
+    volumes:
+      - ./backend:/app
+
+networks:
+  yolo_network:
+    driver: bridge
+
+
+volumes:
+  yolo-client:
+  yolo-backend:
