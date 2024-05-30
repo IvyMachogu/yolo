@@ -16,5 +16,5 @@
 - name: Run Docker Compose to start containers
   command: docker-compose up -d
   args:
-    chdir: /home/ivy/development/yolo
+    chdir: /home/ivy/development/ips/yolo
   become: yes

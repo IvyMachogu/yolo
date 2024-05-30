@@ -1,2 +1,15 @@
 ---
 # tasks file for yolo-backend
+    - name: Pull Docker image
+      docker_image:
+        name: ivymachogu/yolo-backend:v1.1.1
+        source: pull
+
+    - name: Run Docker container
+      docker_container:
+        name: yolo-client
+        image: ivymachogu/yolo-backend:v1.1.1
+        state: started
+        restart_policy: always
+        ports:
+          - "5000:5000"
