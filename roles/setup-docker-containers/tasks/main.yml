@@ -1,2 +1,20 @@
 ---
 # tasks file for setup-docker-containers
+- name: Install Docker
+  apt:
+    name: docker-ce
+    state: present
+  become: yes
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Run Docker Compose to start containers
+  command: docker-compose up -d
+  args:
+    chdir: /home/ivy/development/yolo
+  become: yes
