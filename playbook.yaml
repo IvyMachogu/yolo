@@ -1,5 +1,11 @@
 - hosts: all
   become: true
-  tasks:
-    - name: Test connectivity
-      ping:
+  roles:
+    - test-connectivity
+    - update-server
+    - install-docker
+    - yolo-client
+    - yolo-backend
+    - git-deploy
+    - setup-docker-containers
+    
