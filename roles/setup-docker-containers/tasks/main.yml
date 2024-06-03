@@ -4,17 +4,17 @@
   apt:
     name: docker-ce
     state: present
-  become: yes
+  become: true
 
 - name: Start Docker service
   service:
     name: docker
     state: started
     enabled: yes
-  become: yes
+  become: true
 
 - name: Run Docker Compose to start containers
   command: docker-compose up -d
   args:
     chdir: /home/ivy/development/ips/yolo
-  become: yes
+  become: true
