@@ -4,7 +4,7 @@ metadata:
   name: yolo-backend-service
 spec:
   selector:
-    app: yolo-backend
+    app: backend
   ports:
   - protocol: TCP
     port: 5000

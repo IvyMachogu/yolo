@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: yolo-backend
+      app: backend
   template:
     metadata:
       labels:
-        app: yolo-backend
+        app: backend
     spec:
       containers:
-      - name: backend-container
+      - name: yolo-backend
         image: ivymachogu/yolo-backend:v1.1.1
         ports:
         - containerPort: 5000
